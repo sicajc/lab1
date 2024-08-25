@@ -1,0 +1,56 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "(UDB) Launch",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/cache_test",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "miDebuggerPath": "/home/sicajc/Undo-Suite-x86-7.3.2/udb",
+      "miDebuggerArgs": "",
+      "logging": {
+        "trace": false,
+        "traceResponse": false,
+        "engineLogging": false
+      },
+      "udb": "live",
+      "timezone": "",
+      "udbConfiguration": {}
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": ["/home/sicajc/lab1/problem/inputs/inst/mult_pos_pos.x"],
+      // This specifies the input argument to be passed when running the debug mode
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "/home/sicajc/lab1/problem",
+      // This specifies the working directory
+      "program": "/home/sicajc/lab1/problem/sim",
+      // This findsthe output file of the program after g++ compilation
+      "MIMode": "gdb",
+      "miDebuggerPath": "/home/sicajc/Undo-Suite-x86-7.3.2/udb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
