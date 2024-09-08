@@ -2,6 +2,30 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "(gdb) Launch",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/cache_test",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+          {
+              "description": "Enable pretty-printing for gdb",
+              "text": "-enable-pretty-printing",
+              "ignoreFailures": true
+          },
+          {
+              "description": "Set Disassembly Flavor to Intel",
+              "text": "-gdb-set disassembly-flavor intel",
+              "ignoreFailures": true
+          }
+      ]
+    },
+    {
       "name": "(UDB) Launch",
       "type": "cppdbg",
       "request": "launch",
@@ -34,16 +58,13 @@
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
-      "args": ["/home/sicajc/lab1/problem/inputs/inst/mult_pos_pos.x"],
-      // This specifies the input argument to be passed when running the debug mode
+      "args": [],
       "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "/home/sicajc/lab1/problem",
-      // This specifies the working directory
-      "program": "/home/sicajc/lab1/problem/sim",
-      // This findsthe output file of the program after g++ compilation
+      "externalConsole": false,
+      "cwd": "/home/sicajc/lab1/problem/debug",
+      "program": "/home/sicajc/lab1/problem/debug/build/Debug/outDebug",
       "MIMode": "gdb",
-      "miDebuggerPath": "/home/sicajc/Undo-Suite-x86-7.3.2/udb",
+      "miDebuggerPath": "gdb",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",

@@ -1,6 +1,8 @@
 #ifndef _CACHE_H_
 #define _CACHE_H_
 
+#define MEM_WORD_SIZE 1<<20
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -32,15 +34,12 @@ extern cache_block i_cache[64][4];
 // This is useful for sharing variables within the system
 extern cache_block d_cache[256][8];
 
-
 uint32_t  i_cache_get(u_int32_t addr,u_int32_t* time); // Returns a value and updates the i cache
 uint32_t  d_cache_get(u_int32_t addr,u_int32_t* time); // Returns a value and updates the d cache
 
-void cache_init();
-void cache_destroy();
-int  cache_insert(u_int32_t addr, u_int32_t value); // return hit or miss
-void cache_delete();
-void cache_print(cache_block** cache,int num_sets,int num_ways);
-void cache_clear();
+// Initialize the instruction memory
+extern uint32_t inst_mem[MEM_WORD_SIZE];
+
+void init_cache(); // Initializes the cache
 
 #endif
